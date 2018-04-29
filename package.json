@@ -1,0 +1,29 @@
+{
+  "name": "meanproject1-app",
+  "version": "1.0.0",
+  "description": "Mean stack application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrendanWu/meanproject1.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Brendan Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrendanWu/meanproject1/issues"
+  },
+  "homepage": "https://github.com/BrendanWu/meanproject1#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1"
+  }
+}
