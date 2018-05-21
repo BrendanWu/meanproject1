@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var dbconn = require('../data/dbconnection.js');
 
 var hotelData = require('../data/hotel-data.json');
@@ -43,4 +44,13 @@ module.exports.hotelsAddOne = function(req, res) {
   res
     .status(200)
     .json(req.body);
+=======
+var hotelData = require('../data/hotel-data.json');
+
+module.exports.hotelsGetAll = function(req, res) {
+  console.log('GET the json');
+  res
+    .status(200)
+    .json(hotelData);
+>>>>>>> 6e954cb902c409d7bca94a1751dc43ba533886f3
 };
