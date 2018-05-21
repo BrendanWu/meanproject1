@@ -1,7 +1,7 @@
 {
-  "name": "meanproject1-app",
+  "name": "mean-app",
   "version": "1.0.0",
-  "description": "Mean stack application",
+  "description": "MEAN stack application",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -9,21 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrendanWu/meanproject1.git"
+    "url": "git+https://github.com/fullstacktraining/mean-stack-app.git"
   },
   "keywords": [
     "mean"
   ],
-  "author": "Brendan Wu",
+  "author": "Full Stack Training",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BrendanWu/meanproject1/issues"
+    "url": "https://github.com/fullstacktraining/mean-stack-app/issues"
   },
-  "homepage": "https://github.com/BrendanWu/meanproject1#readme",
+  "homepage": "https://github.com/fullstacktraining/mean-stack-app#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.7"
   },
   "devDependencies": {
-    "mocha": "^5.1.1"
+    "mocha": "^2.3.3"
   }
 }

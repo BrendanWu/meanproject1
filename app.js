@@ -1,34 +1,31 @@
-var express = require("express");
+require('./api/data/dbconnection.js').open();
+var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
 
-var routes = require("./routes");
+var routes = require('./api/routes');
 
-app.set('port',3000);
-app.use('/css',function(req,res,next){
-    console.log(req.method,req.url)
-    next();
+// Define the port to run on
+app.set('port', 3000);
+
+// Add middleware to console log every request
+app.use(function(req, res, next) {
+  console.log(req.method, req.url);
+  next(); 
 });
+
+// Set static directory before defining routes
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/api",routes);
 
-app.get("/json", function(req,res){
-    console.log("GET the json");
-    res
-        .status(200)
-        .json( {"jsonData":true} );
+// Enable parsing of posted forms
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Add some routing
+app.use('/api', routes);
+
+// Listen for requests
+var server = app.listen(app.get('port'), function() {
+  var port = server.address().port;
+  console.log('Magic happens on port ' + port);
 });
-
-app.get("/file", function(req,res){
-    console.log("GET the file");
-    res
-        .status(200)
-        .sendFile( path.join(__dirname, 'app.js') );
-});
-
-
-var server = app.listen(app.get("port"), function() {
-    var port = server.address().port;
-    console.log("magic happens on port" + port);
-});
-
