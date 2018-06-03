@@ -1,4 +1,4 @@
-var dbconn = require('./api/data/dbconnection.js').open();
+require('./api/data/db.js');
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var routes = require('./api/routes');
 
 // Define the port to run on
-app.set('port', 3000)
-;
+app.set('port', 3000);
+
 // Add middleware to console log every request
 app.use(function(req, res, next) {
   console.log(req.method, req.url);
